@@ -393,7 +393,7 @@ namespace SBEPAEscritorio
                             ActualizarProductoBD.IngresarImagen("call sbepa2.ActualizarProducto(" + txtOriginalIDProducto.Text + ", '" + txtOriginalNombreProducto.Text + "', '" + txtOriginaMarcaProducto.Text + "', '" + cmbEmvase.Text + "', '" + cmbUnidadMedida.Text + "', " + NUDOriginalCantidadMedida.ToString() + ", " + txtOriginalIdSubCategoria.Text + ", @imagen, '" + txtOrignalDescripcionProducto.Text + "', 'NO', '" + txtOriginalUPCProducto.Text + "');", pbOriginalImagenProducto.Image);
                             //Se actualiza el CambioInfoProducto
                             ActualizarProductoBD.IngresarConsulta1("call sbepa2.ActualizarCambioInfoProducto(" + txtCambioIDInfoProducto.Text + ", 'Aprobado');");
-                            ActualizarProductoBD.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'CambioInfoProducto', 'Autorizar Cambio Producto', 'La solitud de cambio de la informacion de producto con el ID: " + txtCambioIDInfoProducto.Text + " a sido aprobada')");
+                            ActualizarProductoBD.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'CambioInfoProducto', 'Autorizar Cambio Producto', 'La solitud de cambio de la informacion de producto con el ID: " + txtCambioIDInfoProducto.Text + " a sido aprobada')");
                             LimpiarCampos();
                             CargarProductosCambioInfo();
                         }
@@ -435,7 +435,7 @@ namespace SBEPAEscritorio
                         RechazarSolitudCambio.AbrirConexionBD1();
                         RechazarSolitudCambio.IngresarConsulta1("call sbepa2.ActualizarCambioInfoProducto("+ txtCambioIDInfoProducto.Text+ ", 'Rechazado');");
                         //Se regista la Accion
-                        RechazarSolitudCambio.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'CambioInfoProducto', 'Rechazar Cambio Producto', 'La solitud de cambio de la informacion de producto con el ID: " + txtCambioIDInfoProducto.Text + " a sido rechazada')");
+                        RechazarSolitudCambio.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'CambioInfoProducto', 'Rechazar Cambio Producto', 'La solitud de cambio de la informacion de producto con el ID: " + txtCambioIDInfoProducto.Text + " a sido rechazada')");
                         LimpiarCampos();
                         CargarProductosCambioInfo();
                     }

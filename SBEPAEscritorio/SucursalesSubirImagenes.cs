@@ -162,7 +162,7 @@ namespace SBEPAEscritorio
                     {
                         GuardarImagenes.AbrirConexionBD1();
                         GuardarImagenes.IngresarImagen("call sbepa2.InsertarSucursalFoto(" + IDSucursal + ", @imagen);", pbimg1.Image);
-                        GuardarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales Fotos', 'Insertar', 'Registro la Imagen 1 de la sucursal con el ID de imagen:" + txtIDImagen1.Text + "');");
+                        GuardarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales Fotos', 'Insertar', 'Registro la Imagen 1 de la sucursal con el ID de imagen:" + txtIDImagen1.Text + "');");
                         MessageBox.Show("La Imagen 1 de la sucursal ha sido correctamente registrada", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarImagenesSucursales();
 
@@ -199,7 +199,7 @@ namespace SBEPAEscritorio
                     {
                         RemplazarImagenes.AbrirConexionBD1();
                         RemplazarImagenes.IngresarImagen("call sbepa2.ActualizarSucursalFoto(" + txtIDImagen1.Text + "," + txtIDSucursal.Text + ", @imagen);", pbimg1.Image);
-                        RemplazarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales Fotos', 'Actualizar', 'Actualizo la Imagen 1 de la sucursal con el ID de imagen:" + txtIDImagen1.Text + "');");
+                        RemplazarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales Fotos', 'Actualizar', 'Actualizo la Imagen 1 de la sucursal con el ID de imagen:" + txtIDImagen1.Text + "');");
                         MessageBox.Show("La Imagen 1 de la sucursal ha sido correctamente remplazada", "Remplazo Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarImagenesSucursales();
                     }
@@ -239,7 +239,7 @@ namespace SBEPAEscritorio
                     {
                         GuardarImagenes.AbrirConexionBD1();
                         GuardarImagenes.IngresarImagen("call sbepa2.InsertarSucursalFoto(" + IDSucursal + ", @imagen);", pbimg2.Image);
-                        GuardarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales Fotos', 'Insertar', 'Registro la Imagen 2 de la sucursal con el ID de imagen:" + txtIDImagen2.Text + "');");
+                        GuardarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales Fotos', 'Insertar', 'Registro la Imagen 2 de la sucursal con el ID de imagen:" + txtIDImagen2.Text + "');");
                         MessageBox.Show("La Imagen 2 de la sucursal ha sido correctamente registrada", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarImagenesSucursales();
 
@@ -276,7 +276,7 @@ namespace SBEPAEscritorio
                     {
                         RemplazarImagenes.AbrirConexionBD1();
                         RemplazarImagenes.IngresarImagen("call sbepa2.ActualizarSucursalFoto(" + txtIDImagen2.Text + "," + txtIDSucursal.Text + ", @imagen);", pbimg2.Image);
-                        RemplazarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales Fotos', 'Actualizar', 'Actualizo la Imagen 2 de la sucursal con el ID de imagen:" + txtIDImagen2.Text + "');");
+                        RemplazarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales Fotos', 'Actualizar', 'Actualizo la Imagen 2 de la sucursal con el ID de imagen:" + txtIDImagen2.Text + "');");
                         MessageBox.Show("La Imagen 2 de la sucursal ha sido correctamente remplazada", "Remplazo Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarImagenesSucursales();
                     }
@@ -316,7 +316,7 @@ namespace SBEPAEscritorio
                     {
                         GuardarImagenes.AbrirConexionBD1();
                         GuardarImagenes.IngresarImagen("call sbepa2.InsertarSucursalFoto(" + IDSucursal + ", @imagen);", pbimg3.Image);
-                        GuardarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales Fotos', 'Insertar', 'Registro la Imagen 3 de la sucursal con el ID de imagen:" + txtIDImagen3.Text + "');");
+                        GuardarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales Fotos', 'Insertar', 'Registro la Imagen 3 de la sucursal con el ID de imagen:" + txtIDImagen3.Text + "');");
                         MessageBox.Show("La Imagen 3 de la sucursal ha sido correctamente registrada", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarImagenesSucursales();
 
@@ -353,7 +353,7 @@ namespace SBEPAEscritorio
                     {
                         RemplazarImagenes.AbrirConexionBD1();
                         RemplazarImagenes.IngresarImagen("call sbepa2.ActualizarSucursalFoto(" + txtIDImagen3.Text + "," + txtIDSucursal.Text + ", @imagen);", pbimg3.Image);
-                        RemplazarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales Fotos', 'Actualizar', 'Actualizo la Imagen 3 de la sucursal con el ID de imagen:" + txtIDImagen3.Text + "');");
+                        RemplazarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales Fotos', 'Actualizar', 'Actualizo la Imagen 3 de la sucursal con el ID de imagen:" + txtIDImagen3.Text + "');");
                         MessageBox.Show("La Imagen 3 de la sucursal ha sido correctamente remplazada", "Remplazo Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarImagenesSucursales();
                     }
@@ -393,7 +393,7 @@ namespace SBEPAEscritorio
                     {
                         GuardarImagenes.AbrirConexionBD1();
                         GuardarImagenes.IngresarImagen("call sbepa2.InsertarSucursalFoto(" + IDSucursal + ", @imagen);", pbimg4.Image);
-                        GuardarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales Fotos', 'Insertar', 'Registro la Imagen 4 de la sucursal con el ID de imagen:" + txtIDImagen4.Text + "');");
+                        GuardarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales Fotos', 'Insertar', 'Registro la Imagen 4 de la sucursal con el ID de imagen:" + txtIDImagen4.Text + "');");
                         MessageBox.Show("La Imagen 4 de la sucursal ha sido correctamente registrada", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarImagenesSucursales();
 
@@ -430,7 +430,7 @@ namespace SBEPAEscritorio
                     {
                         RemplazarImagenes.AbrirConexionBD1();
                         RemplazarImagenes.IngresarImagen("call sbepa2.ActualizarSucursalFoto(" + txtIDImagen4.Text + "," + txtIDSucursal.Text + ", @imagen);", pbimg4.Image);
-                        RemplazarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales Fotos', 'Actualizar', 'Actualizo la Imagen 4 de la sucursal con el ID de imagen:" + txtIDImagen4.Text + "');");
+                        RemplazarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales Fotos', 'Actualizar', 'Actualizo la Imagen 4 de la sucursal con el ID de imagen:" + txtIDImagen4.Text + "');");
                         MessageBox.Show("La Imagen 4 de la sucursal ha sido correctamente remplazada", "Remplazo Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarImagenesSucursales();
                     }
@@ -470,7 +470,7 @@ namespace SBEPAEscritorio
                     {
                         GuardarImagenes.AbrirConexionBD1();
                         GuardarImagenes.IngresarImagen("call sbepa2.InsertarSucursalFoto(" + IDSucursal + ", @imagen);", pbimg5.Image);
-                        GuardarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales Fotos', 'Insertar', 'Registro la Imagen 5 de la sucursal con el ID de imagen:" + txtIDImagen5.Text + "');");
+                        GuardarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales Fotos', 'Insertar', 'Registro la Imagen 5 de la sucursal con el ID de imagen:" + txtIDImagen5.Text + "');");
                         MessageBox.Show("La Imagen 5 de la sucursal ha sido correctamente registrada", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarImagenesSucursales();
 
@@ -507,7 +507,7 @@ namespace SBEPAEscritorio
                     {
                         RemplazarImagenes.AbrirConexionBD1();
                         RemplazarImagenes.IngresarImagen("call sbepa2.ActualizarSucursalFoto(" + txtIDImagen5.Text + "," + txtIDSucursal.Text + ", @imagen);", pbimg5.Image);
-                        RemplazarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales Fotos', 'Actualizar', 'Actualizo la Imagen 5 de la sucursal con el ID de imagen:" + txtIDImagen5.Text + "');");
+                        RemplazarImagenes.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales Fotos', 'Actualizar', 'Actualizo la Imagen 5 de la sucursal con el ID de imagen:" + txtIDImagen5.Text + "');");
                         MessageBox.Show("La Imagen 5 de la sucursal ha sido correctamente remplazada", "Remplazo Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarImagenesSucursales();
                     }

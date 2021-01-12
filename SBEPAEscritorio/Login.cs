@@ -74,30 +74,48 @@ namespace SBEPAEscritorio
             try
             {
                 //Se envia el usuario, el sha256 de la clave, la fecha actual y la ip publica
-                ResultadoConsulta = sistemaLogin.RellenarTabla1("call sbepa2.IniciarSesionAdministrador('"+ txtUsuario.Text+ "', '"+ HashCalculadoClave + "', '"+ externalip + "');");
+                ResultadoConsulta = sistemaLogin.RellenarTabla1("call sbepa2.IniciarSesionUsuario('" + txtUsuario.Text+ "', '"+ HashCalculadoClave + "', '"+ externalip + "');");
 
                 
                 if (ResultadoConsulta.Rows[0][0].ToString() != "Error Credenciales Invalidas")
                 {
                     //Se las credenciales son invalidas se muestra un mensaje
-                    if (ResultadoConsulta.Rows[0]["YEstado"].ToString() != "Activo")
+                    if (ResultadoConsulta.Rows[0]["YEstado"].ToString() == "Prueba" || ResultadoConsulta.Rows[0]["YEstado"].ToString() == "Completa")
                     {
-                        MessageBox.Show("Su cuenta de Adminsitrador esta inactiva, contacte con el personal Actualmente a Cargo", "Cuenta Inactiva", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                    else
-                    {
-                            //Si las credenciales son validas  Se almacenan en variables compartidas el Rut, Usuario y el Tiempo de Inicio de Sesion
-                            FuncionesAplicacion.NombreUsuario = ResultadoConsulta.Rows[0]["NombreUsuario"].ToString();
-                            FuncionesAplicacion.RutAdmin = ResultadoConsulta.Rows[0]["RutAdmin"].ToString();
-                            FuncionesAplicacion.FechaInicioSesion = ResultadoConsulta.Rows[0]["FechaInicioSesion"].ToString();
-                            FuncionesAplicacion.IP = ResultadoConsulta.Rows[0]["IP"].ToString(); 
-                            FuncionesAplicacion.IDadministrador = ResultadoConsulta.Rows[0]["YIDAdministrador"].ToString();
+                        //Si las credenciales son validas  Se almacenan en variables compartidas el Rut, Usuario y el Tiempo de Inicio de Sesion
+                        FuncionesAplicacion.IDTienda = ResultadoConsulta.Rows[0]["YIDTienda"].ToString();
+                        FuncionesAplicacion.NombreUsuario = ResultadoConsulta.Rows[0]["NombreUsuario"].ToString();
+                        FuncionesAplicacion.RutUsuario = ResultadoConsulta.Rows[0]["RutUsuario"].ToString();
+                        FuncionesAplicacion.FechaInicioSesion = ResultadoConsulta.Rows[0]["XFechaInicioSesion"].ToString();
+                        FuncionesAplicacion.IP = ResultadoConsulta.Rows[0]["IP"].ToString();
+                        FuncionesAplicacion.IDUsuario = ResultadoConsulta.Rows[0]["YIDUsuario"].ToString();
 
+                        //Se revisa si el Usuario tiene una tienda registrada o se le obliga a registrar sus datos
+                        if (FuncionesAplicacion.IDTienda != "")
+                        {
+                            //Si la tienda Esta Registrda
                             //Se limpian los campos, se muestra un mensaje y se lanza el menu
                             txtUsuario.Text = ""; txtClave.Text = "";
                             Menu lanzarMenu = new Menu();
                             lanzarMenu.Show();
                             this.Hide();
+                        }
+                        else
+                        {
+                            //Si la Tienda no esta registrada, se obliga a registrar sus datos
+                            txtUsuario.Text = ""; txtClave.Text = "";
+                            Tienda registrarTiendaObligado = new Tienda();
+                            MessageBox.Show("Antes de iniciar sesión y acceder a todas las características, está obligado a registrar la información de su Tienda en el Sistema", "Obligado registrar tienda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            registrarTiendaObligado.btnCerrar.Enabled = false;
+                            registrarTiendaObligado.btnCerrar.Visible = false;
+                            registrarTiendaObligado.btnSalir2.Visible = true;
+                            registrarTiendaObligado.ShowDialog();
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Su cuenta de Usuario esta inactiva, contacte con el personal Actualmente a Cargo", "Cuenta Inactiva", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 else

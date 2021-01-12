@@ -97,7 +97,6 @@ namespace SBEPAEscritorio
             pbBorrar.Visible = false;
             txtIDUsuario.Text = "";
             txtCantidadVisitas.Text = "";
-            btnBuscarUsuario.Enabled = true;
         }
 
         private void ActivarEditar()
@@ -112,7 +111,6 @@ namespace SBEPAEscritorio
             txtxEliminarTienda.Visible = true;
             pbBorrar.Visible = true;
             pbBorrar.Visible = true;
-            btnBuscarUsuario.Enabled = false;
         }
 
         private void dgbTiendas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -227,13 +225,17 @@ namespace SBEPAEscritorio
                                 //Se registra la imagen
                                 registrarTienda.IngresarImagen("call sbepa2.ActualizarTiendaArchivoLogo(" + IDTiendaRegistra + ", @imagen);", pbLogo.Image);
                                 //Se registra el cambio realizado por el administrador
-                                registrarTienda.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Tienda', 'Insertar', 'REGISTRO LA TIENDA: " + txtNombre.Text + ", CON LA INFORMACION: " + txtInformacion.Text + ", AL USUARIO : " + txtIDUsuario.Text + " y SU LOGO');");
+                                registrarTienda.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Tienda', 'Insertar', 'REGISTRO LA TIENDA: " + txtNombre.Text + ", CON LA INFORMACION: " + txtInformacion.Text + ", AL USUARIO : " + txtIDUsuario.Text + " y SU LOGO');");
                                 //Se muestra mensaje de confirmacion
-                                MessageBox.Show("La Tienda " + txtNombre.Text + " ha sido correctamente Almacenada", "Guardo Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Felicidades La Tienda " + txtNombre.Text + " ha sido correctamente Almacenada, Ahora puede ingresar al menu con todas las caracteristicas, pero Primero debe volver a iniciar sesion", "Guardo Correcto - Reinicidado Sesion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 CargarTiendas();
                                 ActivarNuevo();
                                 cbCambioLogo.Checked = false;
                                 cbCambioLogo.Visible = false;
+
+                                //Se devulve a al login, por guardar su primera tienda
+                                MessageBox.Show("Debe volver a iniciar sesión una vez registrada la tienda, para que todas sus funciones se activen","Reinicio de Sesion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                                this.Close();
                             }
                             catch (Exception ex)
                             {
@@ -285,14 +287,14 @@ namespace SBEPAEscritorio
                                 //Se ingresa la nueva imagen
                                 actualizarTienda.IngresarImagen("call sbepa2.ActualizarTiendaArchivoLogo(" + txtIDTienda.Text + ", @imagen);", pbLogo.Image);
                                 //Se guarda el registro
-                                actualizarTienda.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Tienda', 'Actualizar', 'MODIFICO LOS DATOS DE LA TIENDA CON EL ID: " + txtIDTienda.Text + " , ACTUALIZO EL NOMBRE DE LA TIENDA A: " + txtNombre.Text + ", Y ACTUALIZO LA INFORMACION DE LA TIENDA A: " + txtInformacion.Text + ", SE CAMBIO EL LOGO DE LA TIENDA');");
+                                actualizarTienda.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Tienda', 'Actualizar', 'MODIFICO LOS DATOS DE LA TIENDA CON EL ID: " + txtIDTienda.Text + " , ACTUALIZO EL NOMBRE DE LA TIENDA A: " + txtNombre.Text + ", Y ACTUALIZO LA INFORMACION DE LA TIENDA A: " + txtInformacion.Text + ", SE CAMBIO EL LOGO DE LA TIENDA');");
                             }
                             else
                             {
                                 //Se guardan los cambios de la tienda
                                 actualizarTienda.IngresarConsulta1("call sbepa2.ActualizarTienda(" + txtIDTienda.Text + ", '" + txtNombre.Text + "', '" + txtInformacion.Text + "');");
                                 //Se guarda el registro
-                                actualizarTienda.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Tienda', 'Actualizar', 'MODIFICO LOS DATOS DE LA TIENDA CON EL ID: " + txtIDTienda.Text + " , ACTUALIZO EL NOMBRE DE LA TIENDA A: " + txtNombre.Text + ", Y ACTUALIZO LA INFORMACION DE LA TIENDA A: " + txtInformacion.Text + ", NO SE CAMBIO EL LOGO DE LA TIENDA');");
+                                actualizarTienda.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Tienda', 'Actualizar', 'MODIFICO LOS DATOS DE LA TIENDA CON EL ID: " + txtIDTienda.Text + " , ACTUALIZO EL NOMBRE DE LA TIENDA A: " + txtNombre.Text + ", Y ACTUALIZO LA INFORMACION DE LA TIENDA A: " + txtInformacion.Text + ", NO SE CAMBIO EL LOGO DE LA TIENDA');");
                             }
 
                             MessageBox.Show("La Tienda " + txtNombre.Text + " ha sido correctamente Modificada", "Modificacion Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -468,7 +470,7 @@ namespace SBEPAEscritorio
                             //Se elimina
                             EliminarTienda.IngresarConsulta1("call sbepa2.EliminarTienda(" + txtIDTienda.Text + ");");
                             //Se guarda el registro
-                            EliminarTienda.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Tienda', 'Eliminar', 'ELIMINO LA TIENDA CON EL ID DE REGISTRO: " + txtIDTienda.Text + " LA CUAL TENIA POR NOMBRE: " + txtNombre.Text + "');");
+                            EliminarTienda.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Tienda', 'Eliminar', 'ELIMINO LA TIENDA CON EL ID DE REGISTRO: " + txtIDTienda.Text + " LA CUAL TENIA POR NOMBRE: " + txtNombre.Text + "');");
                             MessageBox.Show("Tienda Eliminada Correctamente", "Proceso Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ActivarNuevo();
                             CargarTiendas();
@@ -495,16 +497,15 @@ namespace SBEPAEscritorio
             }
         }
 
-        private void btnBuscarUsuario_Click(object sender, EventArgs e)
-        {
-            //Se abre el form para buscar el id del usuarios
-            TiendaBuscarUsuario abrirBuscar = new TiendaBuscarUsuario();
-            abrirBuscar.ShowDialog();
-        }
-
         private void cmbBuscarEn_SelectedIndexChanged(object sender, EventArgs e)
         {
             ActivarBusqueda();
+        }
+
+        private void btnSalir2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Debe Registrar la Tienda Obligatoriamente, la próxima vez que inicie sesión se le pedirá nuevamente, debe de registrar la tienda para que pueda iniciar sesión con todas las demás funcionalidades activadas","Recuerde Registrar la Tienda",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            this.Close();
         }
     }
 }

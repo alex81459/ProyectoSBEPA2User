@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tienda));
             this.dgbTiendas = new System.Windows.Forms.DataGridView();
             this.Idtienda = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +58,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbBorrar = new System.Windows.Forms.PictureBox();
             this.txtxEliminarTienda = new System.Windows.Forms.Button();
-            this.btnBuscarUsuario = new System.Windows.Forms.Button();
             this.pbCantidadVisitas = new System.Windows.Forms.PictureBox();
             this.txtCantidadVisitas = new System.Windows.Forms.TextBox();
             this.pbIDUsuario = new System.Windows.Forms.PictureBox();
@@ -85,6 +84,7 @@
             this.nudPaginaActualBuscar = new System.Windows.Forms.NumericUpDown();
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.btnActualizar = new System.Windows.Forms.PictureBox();
             this.btnCambiarPagina = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -99,7 +99,7 @@
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.btnSalir2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgbTiendas)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorrar)).BeginInit();
@@ -117,6 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLupa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPaginaActualBuscar)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPaginaActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -124,7 +125,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgbTiendas
@@ -134,14 +135,14 @@
             this.dgbTiendas.AllowUserToResizeRows = false;
             this.dgbTiendas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgbTiendas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgbTiendas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgbTiendas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgbTiendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgbTiendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Idtienda,
@@ -155,11 +156,11 @@
             this.dgbTiendas.Name = "dgbTiendas";
             this.dgbTiendas.ReadOnly = true;
             this.dgbTiendas.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Cyan;
-            this.dgbTiendas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Cyan;
+            this.dgbTiendas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgbTiendas.Size = new System.Drawing.Size(568, 377);
             this.dgbTiendas.TabIndex = 0;
             this.dgbTiendas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbTiendas_CellDoubleClick);
@@ -390,7 +391,6 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pbBorrar);
             this.panel1.Controls.Add(this.txtxEliminarTienda);
-            this.panel1.Controls.Add(this.btnBuscarUsuario);
             this.panel1.Controls.Add(this.pbCantidadVisitas);
             this.panel1.Controls.Add(this.txtCantidadVisitas);
             this.panel1.Controls.Add(this.pbIDUsuario);
@@ -441,16 +441,6 @@
             this.txtxEliminarTienda.Text = "Eliminar Tienda";
             this.txtxEliminarTienda.UseVisualStyleBackColor = true;
             this.txtxEliminarTienda.Click += new System.EventHandler(this.txtxEliminarTienda_Click);
-            // 
-            // btnBuscarUsuario
-            // 
-            this.btnBuscarUsuario.Location = new System.Drawing.Point(163, 32);
-            this.btnBuscarUsuario.Name = "btnBuscarUsuario";
-            this.btnBuscarUsuario.Size = new System.Drawing.Size(24, 20);
-            this.btnBuscarUsuario.TabIndex = 92;
-            this.btnBuscarUsuario.Text = "...";
-            this.btnBuscarUsuario.UseVisualStyleBackColor = true;
-            this.btnBuscarUsuario.Click += new System.EventHandler(this.btnBuscarUsuario_Click);
             // 
             // pbCantidadVisitas
             // 
@@ -753,6 +743,16 @@
             this.panel3.Size = new System.Drawing.Size(996, 563);
             this.panel3.TabIndex = 65;
             // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::SBEPAEscritorio.Properties.Resources.MiniLogo;
+            this.pictureBox11.Location = new System.Drawing.Point(534, 9);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(40, 47);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox11.TabIndex = 166;
+            this.pictureBox11.TabStop = false;
+            // 
             // btnActualizar
             // 
             this.btnActualizar.Image = global::SBEPAEscritorio.Properties.Resources.actualizar;
@@ -847,6 +847,7 @@
             // 
             this.Barra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Barra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Barra.Controls.Add(this.btnSalir2);
             this.Barra.Controls.Add(this.btnMinimizar);
             this.Barra.Controls.Add(this.pictureBox20);
             this.Barra.Controls.Add(this.btnCerrar);
@@ -908,15 +909,18 @@
             this.label7.TabIndex = 22;
             this.label7.Text = "Gestion de Tiendas";
             // 
-            // pictureBox11
+            // btnSalir2
             // 
-            this.pictureBox11.Image = global::SBEPAEscritorio.Properties.Resources.MiniLogo;
-            this.pictureBox11.Location = new System.Drawing.Point(534, 9);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(40, 47);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox11.TabIndex = 166;
-            this.pictureBox11.TabStop = false;
+            this.btnSalir2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir2.Image = global::SBEPAEscritorio.Properties.Resources.icons8_cerrar_ventana_48;
+            this.btnSalir2.Location = new System.Drawing.Point(932, -1);
+            this.btnSalir2.Name = "btnSalir2";
+            this.btnSalir2.Size = new System.Drawing.Size(20, 20);
+            this.btnSalir2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSalir2.TabIndex = 27;
+            this.btnSalir2.TabStop = false;
+            this.btnSalir2.Visible = false;
+            this.btnSalir2.Click += new System.EventHandler(this.btnSalir2_Click);
             // 
             // Tienda
             // 
@@ -953,6 +957,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPaginaActualBuscar)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPaginaActual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -961,7 +966,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1001,7 +1006,6 @@
         private System.Windows.Forms.Panel Barra;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox cbCambioLogo;
         private System.Windows.Forms.Label label6;
@@ -1025,7 +1029,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pbCantidadVisitas;
         private System.Windows.Forms.TextBox txtCantidadVisitas;
-        private System.Windows.Forms.Button btnBuscarUsuario;
         private System.Windows.Forms.PictureBox pbBorrar;
         private System.Windows.Forms.Button txtxEliminarTienda;
         private System.Windows.Forms.DataGridViewTextBoxColumn Idtienda;
@@ -1036,5 +1039,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Archivo_logo;
         public System.Windows.Forms.TextBox txtIDUsuario;
         private System.Windows.Forms.PictureBox pictureBox11;
+        public System.Windows.Forms.PictureBox btnCerrar;
+        public System.Windows.Forms.PictureBox btnSalir2;
     }
 }

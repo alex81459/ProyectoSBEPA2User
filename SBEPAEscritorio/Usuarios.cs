@@ -336,7 +336,7 @@ namespace SBEPAEscritorio
                                                 String IDNuevoUsuario = RegistrarUsuarioNuevo.RellenarTabla1("SELECT Id_usuario FROM sbepa2.usuarios where RutUsuario = '"+txtRut.Text+"';").Rows[0]["Id_usuario"].ToString();
                                                 RegistrarUsuarioNuevo.IngresarConsulta1("call sbepa2.InsertarCredencialesUsuarios('"+txtUsuario.Text+"', '"+ Sha256deClave + "', "+ IDNuevoUsuario + ");");
                                                 //Se registran los cambios hechos por el administrador
-                                                RegistrarUsuarioNuevo.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Usuarios', 'Insertar', 'REGISTRO EL USUARIO: " + txtNombre.Text + ", CON EL NOMBRE DE USUARIO: " + txtUsuario.Text + " CORREO ELECTRONICO: " + txtCorreoElectronico.Text + " CIUDAD: " + txtDireccion.Text + " RUT: " + txtRut.Text + " NOMBRE: " + txtNombre.Text + " APELLIDO: " + txtApellido.Text + " TELFONO: "+txtTelefono.Text+"');");
+                                                RegistrarUsuarioNuevo.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Usuarios', 'Insertar', 'REGISTRO EL USUARIO: " + txtNombre.Text + ", CON EL NOMBRE DE USUARIO: " + txtUsuario.Text + " CORREO ELECTRONICO: " + txtCorreoElectronico.Text + " CIUDAD: " + txtDireccion.Text + " RUT: " + txtRut.Text + " NOMBRE: " + txtNombre.Text + " APELLIDO: " + txtApellido.Text + " TELFONO: "+txtTelefono.Text+"');");
 
                                                 MessageBox.Show("Nuevo Usuario: " + txtUsuario.Text + " a sido correctamente registrado en el sistema y sus credenciales fueron registradas", "Usuario Registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                 CargarUsuarios();
@@ -403,7 +403,7 @@ namespace SBEPAEscritorio
                                             String IDUsuario = ActualizarUsuario.RellenarTabla1("SELECT Id_usuario FROM sbepa2.usuarios where RutUsuario = '" + txtRut.Text + "';").Rows[0][0].ToString();
                                             ActualizarUsuario.IngresarConsulta1("call sbepa2.ActualizarCredencialesUsuario("+txtID.Text+", '"+txtUsuario.Text+"', '"+ Sha256deClave + "');");
                                             //Se registra el cambio
-                                            ActualizarUsuario.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Usuarios', 'Actualizar', 'ACTUALIZO EL USUARIO: " + txtRut.Text + " CON EL CORREO: " + txtCorreoElectronico.Text + " LA CIUDAD: " + txtDireccion.Text + " EL NOMBRE: " + txtNombre.Text + " EL APELLIDO: " + txtApellido.Text + " EL TELEFONO: "+txtTelefono.Text+" Y REALIZO EL CAMBIO DE LA CONTRASEÑA DEL USUARIO');");
+                                            ActualizarUsuario.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Usuarios', 'Actualizar', 'ACTUALIZO EL USUARIO: " + txtRut.Text + " CON EL CORREO: " + txtCorreoElectronico.Text + " LA CIUDAD: " + txtDireccion.Text + " EL NOMBRE: " + txtNombre.Text + " EL APELLIDO: " + txtApellido.Text + " EL TELEFONO: "+txtTelefono.Text+" Y REALIZO EL CAMBIO DE LA CONTRASEÑA DEL USUARIO');");
 
                                             MessageBox.Show("Actualizado Usuario: " + txtRut.Text + " a sido correctamente actualizado en el sistema", "Usuario Registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             CargarUsuarios();
@@ -418,7 +418,7 @@ namespace SBEPAEscritorio
                                     //Se actualiza el usuario
                                     ActualizarUsuario.IngresarConsulta1("call sbepa2.ActualizarUsuario(" + txtID.Text + ", '" + txtCorreoElectronico.Text + "', '" + txtDireccion.Text + "', '" + txtTelefono.Text + "', '" + cbEstado.Text + "');");
                                     //Se registra el cambio
-                                    ActualizarUsuario.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Usuarios', 'Actualizar', 'ACTUALIZO EL USUARIO: " + txtRut.Text + " CON EL CORREO: " + txtCorreoElectronico.Text + " LA CIUDAD: " + txtDireccion.Text + " EL NOMBRE: " + txtNombre.Text + " EL APELLIDO: " + txtApellido.Text + " EL TELEFONO: " + txtTelefono.Text + "');");
+                                    ActualizarUsuario.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Usuarios', 'Actualizar', 'ACTUALIZO EL USUARIO: " + txtRut.Text + " CON EL CORREO: " + txtCorreoElectronico.Text + " LA CIUDAD: " + txtDireccion.Text + " EL NOMBRE: " + txtNombre.Text + " EL APELLIDO: " + txtApellido.Text + " EL TELEFONO: " + txtTelefono.Text + "');");
                                     CargarUsuarios();
                                     Limpiar();
                                 }
@@ -522,7 +522,7 @@ namespace SBEPAEscritorio
                                 //Se elimina el usuario
                                 EliminarUsuario.IngresarConsulta1("call sbepa2.EliminarUsuario("+txtID.Text+");");
                                 //Se guarda el registro del borrado
-                                EliminarUsuario.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Usuarios', 'Eliminar', 'ELIMINO AL USUARIO CON EL ID: " + txtID.Text + " EL CUAL TENIA POR RUT: " + txtRut.Text + "');");
+                                EliminarUsuario.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Usuarios', 'Eliminar', 'ELIMINO AL USUARIO CON EL ID: " + txtID.Text + " EL CUAL TENIA POR RUT: " + txtRut.Text + "');");
                                
                                 //Se notifica y se carga el sistema
                                 MessageBox.Show("El Usuario fue Eliminado Correctamente del Sistema", "Usuario Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);

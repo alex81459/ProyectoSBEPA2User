@@ -255,7 +255,7 @@ namespace SBEPAEscritorio
                                     //Se registra la sucursal
                                     registrarSucursal.IngresarConsulta1("call sbepa2.InsertarSucursal(" + txtIDTienda.Text + ", " + txtIDComuna.Text + ", '" + txtDireccion.Text + "', '" + txtCoordenadas.Text + "', '" + txtTelefono.Text + "', '" + txtCorreoElectronico.Text + "', '" + txtDescripcion.Text + "', '" + txtHorario.Text + "');");
                                     //Seregistra la accion
-                                    registrarSucursal.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales', 'Insertar', 'REGISTRO LA SUCURSAL CON EL ID DE COMUNA: "+txtIDTienda.Text+", EL ID DE COMUNA: "+txtIDComuna.Text+", LA DIRECCION: "+ txtDireccion.Text+ ", EL TELFONO: "+ txtTelefono.Text + ", EL CORREO ELECTRONICO: "+txtCorreoElectronico.Text+", LA DESCRIPCION: "+txtDescripcion.Text+", El HORARIO: "+txtHorario.Text+", Y LAS COORDENADAS: "+txtCoordenadas.Text+"');");
+                                    registrarSucursal.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales', 'Insertar', 'REGISTRO LA SUCURSAL CON EL ID DE COMUNA: "+txtIDTienda.Text+", EL ID DE COMUNA: "+txtIDComuna.Text+", LA DIRECCION: "+ txtDireccion.Text+ ", EL TELFONO: "+ txtTelefono.Text + ", EL CORREO ELECTRONICO: "+txtCorreoElectronico.Text+", LA DESCRIPCION: "+txtDescripcion.Text+", El HORARIO: "+txtHorario.Text+", Y LAS COORDENADAS: "+txtCoordenadas.Text+"');");
                                     MessageBox.Show("La Sucursal ha sido correctamente registrada en el Sistema", "Sucursal Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     CargarSucursales();
                                     LimpiarCamposForm();
@@ -292,7 +292,7 @@ namespace SBEPAEscritorio
                         actualizarSucursal.AbrirConexionBD1();
                         actualizarSucursal.IngresarConsulta1("call sbepa2.ActualizarSucursales("+txtIDSucursal.Text+", "+txtIDTienda.Text+", "+txtIDComuna.Text+", '"+txtDireccion.Text+"', '"+txtCoordenadas.Text+"', '"+txtTelefono.Text+"', '"+txtCorreoElectronico.Text+"', '"+txtDescripcion.Text+"', '"+txtHorario.Text+"');");
 
-                        actualizarSucursal.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales', 'Actualizar', 'ACTUALIZO LA SUCURSAL CON EL ID DE SUCURSAL: "+txtIDSucursal.Text+", DE COMUNA: " + txtIDTienda.Text + ", EL ID DE COMUNA: " + txtIDComuna.Text + ", LA DIRECCION: " + txtDireccion.Text + ", EL TELFONO: " + txtTelefono.Text + ", EL CORREO ELECTRONICO: " + txtCorreoElectronico.Text + ", LA DESCRIPCION: " + txtDescripcion.Text + ", El HORARIO: " + txtHorario.Text + ", Y LAS COORDENADAS: " + txtCoordenadas.Text + "');");
+                        actualizarSucursal.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales', 'Actualizar', 'ACTUALIZO LA SUCURSAL CON EL ID DE SUCURSAL: "+txtIDSucursal.Text+", DE COMUNA: " + txtIDTienda.Text + ", EL ID DE COMUNA: " + txtIDComuna.Text + ", LA DIRECCION: " + txtDireccion.Text + ", EL TELFONO: " + txtTelefono.Text + ", EL CORREO ELECTRONICO: " + txtCorreoElectronico.Text + ", LA DESCRIPCION: " + txtDescripcion.Text + ", El HORARIO: " + txtHorario.Text + ", Y LAS COORDENADAS: " + txtCoordenadas.Text + "');");
 
                         MessageBox.Show("La Sucursal ha sido correctamente Modificada en el Sistema", "Sucursal Modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarSucursales();
@@ -334,7 +334,7 @@ namespace SBEPAEscritorio
                                 //Si la clave es correcta se procede a eliminarlo del sistema
                                 EliminarSucursal.AbrirConexionBD1();
                                 EliminarSucursal.IngresarConsulta1("call sbepa2.EliminarSucursal("+txtIDSucursal.Text+");");
-                                EliminarSucursal.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Sucursales', 'Eliminar', 'ELIMINO LA SUCURSAL CON EL ID DE SUCURSAL: " + txtIDSucursal.Text + "');");
+                                EliminarSucursal.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Sucursales', 'Eliminar', 'ELIMINO LA SUCURSAL CON EL ID DE SUCURSAL: " + txtIDSucursal.Text + "');");
                                 LimpiarCamposForm();
                                 ActivarNuevo();
                                 CargarSucursales();

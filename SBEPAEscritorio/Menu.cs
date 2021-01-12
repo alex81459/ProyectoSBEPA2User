@@ -23,9 +23,9 @@ namespace SBEPAEscritorio
         private void Menu_Load(object sender, EventArgs e)
         {
             lblUsuarioActual.Text = FuncionesAplicacion.NombreUsuario;
-            lblRut.Text = FuncionesAplicacion.RutAdmin;
+            lblRut.Text = FuncionesAplicacion.RutUsuario;
             lblTiempoInicioSesion.Text = FuncionesAplicacion.FechaInicioSesion;
-            lblID.Text = FuncionesAplicacion.IDadministrador;
+            lblID.Text = FuncionesAplicacion.IDUsuario;
         }
 
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
@@ -59,32 +59,6 @@ namespace SBEPAEscritorio
             abrirTienda.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Categorias abrirCategorias = new Categorias();
-            abrirCategorias.ShowDialog();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            RegistrosLoginAdmin abrirregistros = new RegistrosLoginAdmin();
-            abrirregistros.ShowDialog();
-        }
-
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Administradores abrirAdmin = new Administradores();
-            abrirAdmin.ShowDialog();
-        }
-
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            CopiaSeguridad AbrirCopia = new CopiaSeguridad();
-            AbrirCopia.ShowDialog();
-        }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             //Cuando se cierra el form se preguntara si esta seguro de cerrar sesion
@@ -93,9 +67,10 @@ namespace SBEPAEscritorio
             if (CerrarAPP == DialogResult.Yes)
             {
                 //Se borran los registros de inicio de sesion, se muestra mensaje y se devuelve al form Login
-                FuncionesAplicacion.IDadministrador = "";
+                FuncionesAplicacion.IDTienda = "";
+                FuncionesAplicacion.IDUsuario = "";
                 FuncionesAplicacion.NombreUsuario = "";
-                FuncionesAplicacion.RutAdmin = "";
+                FuncionesAplicacion.RutUsuario = "";
                 FuncionesAplicacion.FechaInicioSesion = "";
                 FuncionesAplicacion.IP = "";
 
@@ -137,12 +112,6 @@ namespace SBEPAEscritorio
             mover = false;
         }
 
-        private void button13_Click(object sender, EventArgs e)
-        {
-            RegistrosCambiosAdmin abrirRegistros = new RegistrosCambiosAdmin();
-            abrirRegistros.ShowDialog();
-        }
-
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -163,12 +132,6 @@ namespace SBEPAEscritorio
             abrirSucursales.ShowDialog();
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-            Categorias abrirCategorias = new Categorias();
-            abrirCategorias.ShowDialog();
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Productos abrirProductos = new Productos();
@@ -179,18 +142,6 @@ namespace SBEPAEscritorio
         {
             ActualizarPrecioProducto abrirPrecioProducto = new ActualizarPrecioProducto();
             abrirPrecioProducto.ShowDialog();
-        }
-
-        private void pictureBox13_Click(object sender, EventArgs e)
-        {
-            Administradores abrirAdmin = new Administradores();
-            abrirAdmin.ShowDialog();
-        }
-
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
-            RegistrosCambiosAdmin abrirRegistros = new RegistrosCambiosAdmin();
-            abrirRegistros.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -221,12 +172,6 @@ namespace SBEPAEscritorio
         {
             CambioInfoProductos abrirCambio = new CambioInfoProductos();
             abrirCambio.ShowDialog();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            RegionesyComunas abrirGestor = new RegionesyComunas();
-            abrirGestor.ShowDialog();
         }
 
         private void btnEstadisticas_Click(object sender, EventArgs e)

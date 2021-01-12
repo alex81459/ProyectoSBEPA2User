@@ -135,7 +135,7 @@ namespace SBEPAEscritorio
                         {
                             RegistrarBaneo.AbrirConexionBD1();
                             RegistrarBaneo.IngresarConsulta1("call sbepa2.InsertarRegistroUsuariosBaneados('"+ txtRazonBaneo.Text+ "', "+ nudDias.Value.ToString()+ ", "+ txtIDUsuario.Text+ ");");
-                            RegistrarBaneo.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Baneos Usaurios', 'Añadir', 'Baneo al Usuario con ID: "+txtIDUsuario.Text+" Que tiene por nombre: "+ txtNombresUsuario.Text+ " La razon del baneo fue: "+ txtRazonBaneo.Text+ " Una Cantidadad de: "+ nudDias.Value.ToString()+ " Dias');");
+                            RegistrarBaneo.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Baneos Usaurios', 'Añadir', 'Baneo al Usuario con ID: "+txtIDUsuario.Text+" Que tiene por nombre: "+ txtNombresUsuario.Text+ " La razon del baneo fue: "+ txtRazonBaneo.Text+ " Una Cantidadad de: "+ nudDias.Value.ToString()+ " Dias');");
                             RegistrarBaneo.CerrarConexionBD1();
                             MessageBox.Show("Se registro correctamente le Baneo del Usuario con ID:"+txtIDUsuario.Text+"", "Registro Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LimpiarCampos();
@@ -165,7 +165,7 @@ namespace SBEPAEscritorio
                 {
                     ActualizarBaneo.AbrirConexionBD1();
                     ActualizarBaneo.IngresarConsulta1("call sbepa2.ActualizarRegistroUsuarioBaneado("+txtIDBaneo.Text+", '"+txtRazonBaneo.Text+"', "+ nudDias.Value.ToString()+ ");");
-                    ActualizarBaneo.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDadministrador + ", 'Baneos Usaurios', 'Actualizar', 'Actualizo el Baneo con ID: " + txtIDBaneo.Text + " con la razon del baneo: " + txtRazonBaneo.Text + " y modifico los dias A: " + nudDias.Value.ToString() +"');");
+                    ActualizarBaneo.IngresarConsulta1("call sbepa2.InsertarRegistrosCambiosAdministradores(" + FuncionesAplicacion.IDUsuario + ", 'Baneos Usaurios', 'Actualizar', 'Actualizo el Baneo con ID: " + txtIDBaneo.Text + " con la razon del baneo: " + txtRazonBaneo.Text + " y modifico los dias A: " + nudDias.Value.ToString() +"');");
                     MessageBox.Show("La registro del baneo del usuario se realizo correctamente", "Registro Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ActualizarBaneo.CerrarConexionBD1();
                     LimpiarCampos();

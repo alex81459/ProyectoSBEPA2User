@@ -14,9 +14,10 @@ namespace SBEPAEscritorio
     class FuncionesAplicacion
     {
 
-        public static string IDadministrador { get; set; } = string.Empty;
+        public static string IDTienda{ get; set; } = string.Empty;
+        public static string IDUsuario { get; set; } = string.Empty;
         public static string NombreUsuario { get; set; } = string.Empty;
-        public static string RutAdmin { get; set; } = string.Empty;
+        public static string RutUsuario { get; set; } = string.Empty;
         public static string FechaInicioSesion { get; set; } = string.Empty;
         public static string IP { get; set; } = string.Empty;
 
